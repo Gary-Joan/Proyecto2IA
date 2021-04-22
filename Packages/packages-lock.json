@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.ptc.vuforia.engine": {
-      "version": "file:F:/Descargas/com.ptc.vuforia.engine",
+      "version": "file:C:/Users/sharolin/Downloads/com.ptc.vuforia.engine",
       "depth": 0,
       "source": "local",
       "dependencies": {
@@ -68,7 +68,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.4.6",
+      "version": "1.4.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
