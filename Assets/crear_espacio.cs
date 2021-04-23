@@ -10,6 +10,8 @@ public class crear_espacio : MonoBehaviour
     // Start is called before the first frame update
     public List<string> lista_pisos;
     Dictionary<string, string> muebles = new Dictionary<string, string>();
+   
+ 
     public int contador=0;
     public Dropdown drop;
     //cuadro de alertas
@@ -90,13 +92,23 @@ public class crear_espacio : MonoBehaviour
     public void regresar() {
         SceneManager.LoadScene("MainMenu");
     }
+    //inicializar de espacios
+    
     public void mandardatos() {
         GameStatus.muebles_posicion = muebles;
+        GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
+        GameStatus.contador_espacio++;
+       
         if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea ver el escenario o regresar menu principal", "Ver escenario", "Menu principal"))
-
+        {
+            //aqui agregamos al diccionario el espacio con su imagen
+            
             SceneManager.LoadScene("espacio");
+        }
         else
+        {
             SceneManager.LoadScene("MainMenu");
+        }
 
     }
 }

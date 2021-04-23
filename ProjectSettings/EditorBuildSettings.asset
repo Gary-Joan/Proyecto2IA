@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/eliminar_espacio.unity
     guid: 7fca289870e3f9a46a833c43a8820738
+  - enabled: 1
+    path: Assets/lista_editar_espacio.unity
+    guid: f78a5f1903a2bc4478427a3853bf00b4
   m_configObjects: {}

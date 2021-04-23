@@ -7,14 +7,11 @@ public class GameStatus : MonoBehaviour
     // Start is called before the first frame update
     static public string piso = "";
     static public Dictionary<string, string> muebles_posicion;
-    void Start()
-    {
-        
-    }
+    public static Dictionary<string, string> lista_espacios_imagen = new Dictionary<string, string>();
+    public static int contador_espacio = 1;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public static void insertar_lista(string var1, string var2) {
+        lista_espacios_imagen.Add(var1, var2);
     }
+    // public static Dictionary<string, string> Lista_espacios_imagen { get => lista_espacios_imagen; set => lista_espacios_imagen = value; }
 }
