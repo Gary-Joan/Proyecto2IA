@@ -20,7 +20,7 @@ public class script_lista_editar : MonoBehaviour
         }
            
        
-        if (ToggleGroup == null) ToggleGroup = GetComponent<ToggleGroup>();
+        
     }
     public void LogSelectedToggle()
     {
@@ -30,12 +30,48 @@ public class script_lista_editar : MonoBehaviour
 
         Toggle selectedToggle = ToggleGroup.ActiveToggles().FirstOrDefault();
         if (selectedToggle != null)
-            Debug.Log(selectedToggle, selectedToggle);
+        {
+            if (selectedToggle.isOn && selectedToggle.name == "espacio_1")
+            {
+                GameStatus.espacio_seleccionado = 0;
+
+            }
+            else if (selectedToggle.isOn && selectedToggle.name == "espacio_2") {
+
+                GameStatus.espacio_seleccionado = 1;
+            }
+            else if (selectedToggle.isOn && selectedToggle.name == "espacio_3")
+            {
+
+                GameStatus.espacio_seleccionado = 2;
+            }
+            else if (selectedToggle.isOn && selectedToggle.name == "espacio_4")
+            {
+
+                GameStatus.espacio_seleccionado = 3;
+            }
+            else if (selectedToggle.isOn && selectedToggle.name == "espacio_5")
+            {
+
+                GameStatus.espacio_seleccionado = 4;
+
+            }
+            else if (selectedToggle.isOn && selectedToggle.name == "espacio_6")
+            {
+
+                GameStatus.espacio_seleccionado = 5;
+            }
+
+        }
     }
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void ir() {
+        SceneManager.LoadScene("editar_espacio");
     }
 
     public void regresar()

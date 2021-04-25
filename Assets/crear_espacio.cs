@@ -14,40 +14,79 @@ public class crear_espacio : MonoBehaviour
  
     public int contador=0;
     public Dropdown drop;
+
+    //objetipo tipo espacio
+
+    public class espacio { 
+        public string imagen {
+            get;
+            set;
+        }
+        public string silla {
+            get;
+            set;
+        }
+        public string mesa
+        {
+            get;
+            set;
+        }
+        public string gabinete
+        {
+            get;
+            set;
+        }
+        public string comoda
+        {
+            get;
+            set;
+        }
+        public string banco
+        {
+            get;
+            set;
+        }
+
+    }
+
+    public espacio esp = new espacio();
     //cuadro de alertas
        void Start()
-    {  
-
-
-   
+    {     
     }
     public void piso_valuechange(Dropdown sender) {
 
         switch (sender.value)
         {
             case 1:
-                Debug.Log("Case 0");
+               
                 GameStatus.piso = "mario";
+                esp.imagen = GameStatus.piso;
                 break;
             case 2:
-                Debug.Log("Case 1");
+
                 GameStatus.piso = "luigi";
+                esp.imagen = GameStatus.piso;
                 break;
             case 3:
-                Debug.Log("Case 2");
+  
                 GameStatus.piso = "yoshi";
+                esp.imagen = GameStatus.piso;
                 break;
             case 4:
-                Debug.Log("Case 3");
+
                 GameStatus.piso = "peach";
+                esp.imagen = GameStatus.piso;
                 break;
             case 5:
-                Debug.Log("Case 4");
+
                 GameStatus.piso = "toad";
+                esp.imagen = GameStatus.piso;
                 break;
             case 6:
-                Debug.Log("Case 5");
+
                 GameStatus.piso = "bowser";
+                esp.imagen = GameStatus.piso;
                 break;
             default:
                 Debug.Log("error");
@@ -57,32 +96,35 @@ public class crear_espacio : MonoBehaviour
     public void mueble_posicion_change(Dropdown sender) {
         if (sender.name == "drop2") {
             muebles.Add(sender.options[sender.value].text, "silla");
-        
+            esp.silla = sender.options[sender.value].text;
+
+
         }
         else if (sender.name == "drop3")
         {
             muebles.Add(sender.options[sender.value].text, "mesa");
+            esp.mesa = sender.options[sender.value].text;
 
         }
         else if (sender.name == "drop4")
         {
             muebles.Add(sender.options[sender.value].text, "gabinete");
+            esp.gabinete = sender.options[sender.value].text;
 
         }
         else if (sender.name == "drop5")
         {
             muebles.Add(sender.options[sender.value].text, "comoda");
+            esp.comoda = sender.options[sender.value].text;
 
-        }else
+        }
+        else
          if (sender.name == "drop6")
         {
             muebles.Add(sender.options[sender.value].text, "banco");
+            esp.banco = sender.options[sender.value].text;
 
         }
-
-
-
-
     }
     // Update is called once per frame
     void Update()
@@ -98,7 +140,7 @@ public class crear_espacio : MonoBehaviour
         GameStatus.muebles_posicion = muebles;
         GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
         GameStatus.contador_espacio++;
-       
+        GameStatus.insertar_lista_espacios(esp);
         if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea ver el escenario o regresar menu principal", "Ver escenario", "Menu principal"))
         {
             //aqui agregamos al diccionario el espacio con su imagen

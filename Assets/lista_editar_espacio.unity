@@ -1140,9 +1140,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: crear_espacio, Assembly-CSharp
-        m_MethodName: mandardatos
+      - m_Target: {fileID: 29232865}
+        m_TargetAssemblyTypeName: script_lista_editar, Assembly-CSharp
+        m_MethodName: ir
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2568,7 +2568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fafe2cfe61f6974895a912c3755e8f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllowSwitchOff: 0
+  m_AllowSwitchOff: 1
 --- !u!114 &1628993239
 MonoBehaviour:
   m_ObjectHideFlags: 0
