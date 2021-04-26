@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -42,9 +43,25 @@ public class script_editar_espacio : MonoBehaviour
         return 0;
 
     }
+    public void guardar() {
+
+
+        if (EditorUtility.DisplayDialog("Edicion de espacio.", "\n¿Desea Guardar los cambios?", "Si", "No"))
+        {
+            //aqui agregamos al diccionario el espacio con su imagen
+            GameStatus.muebles_posicion = muebles;
+            //SceneManager.LoadScene("MainMenu");
+        }
+        else
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+       
+
+    }
     public void regresar()
     {
-        GameStatus.muebles_posicion = muebles;
+       
         SceneManager.LoadScene("MainMenu");
     }
     // Update is called once per frame
