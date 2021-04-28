@@ -137,10 +137,11 @@ public class crear_espacio : MonoBehaviour
     //inicializar de espacios
     
     public void mandardatos() {
-        GameStatus.muebles_posicion = muebles;
         GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
         GameStatus.contador_espacio++;
         GameStatus.insertar_lista_espacios(esp);
+        GameStatus.insertar_lista_imagen_pos_muebles(esp.imagen, muebles);
+
         if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea ver el escenario o regresar menu principal?", "Ver escenario", "Menu principal"))
         {
             //aqui agregamos al diccionario el espacio con su imagen

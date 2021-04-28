@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class script_editar_espacio : MonoBehaviour
 {
     Dictionary<string, string> muebles = new Dictionary<string, string>();
+    String silla, mesa, gabinete, comoda, banco;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,12 +45,18 @@ public class script_editar_espacio : MonoBehaviour
 
     }
     public void guardar() {
-
+        //insertamos los valores de los drop en la lista de muebles
+        muebles.Add(silla, "silla");
+        muebles.Add(mesa, "mesa");
+        muebles.Add(gabinete, "gabinete");
+        muebles.Add(comoda, "comoda");
+        muebles.Add(banco, "banco");
 
         if (EditorUtility.DisplayDialog("Edicion de espacio.", "\n¿Desea Guardar los cambios?", "Si", "No"))
         {
             //aqui agregamos al diccionario el espacio con su imagen
-            GameStatus.muebles_posicion = muebles;
+            GameStatus.lista_piso_muebles.Remove(GameStatus.piso);
+            GameStatus.insertar_lista_imagen_pos_muebles(GameStatus.piso, muebles);
             //SceneManager.LoadScene("MainMenu");
         }
         else
@@ -88,34 +95,38 @@ public class script_editar_espacio : MonoBehaviour
         }
         else if (sender.name == "drop2")
         {
-            
-            muebles.Add(sender.options[sender.value].text, "silla");
+            silla = sender.options[sender.value].text;
+            //muebles.Add(sender.options[sender.value].text, "silla");
            
 
 
         }
         else if (sender.name == "drop3")
         {
-            muebles.Add(sender.options[sender.value].text, "mesa");
+            mesa = sender.options[sender.value].text;
+           // muebles.Add(sender.options[sender.value].text, "mesa");
 
 
         }
         else if (sender.name == "drop4")
         {
-            muebles.Add(sender.options[sender.value].text, "gabinete");
+            gabinete = sender.options[sender.value].text;
+            //muebles.Add(sender.options[sender.value].text, "gabinete");
        
 
         }
         else if (sender.name == "drop5")
         {
-            muebles.Add(sender.options[sender.value].text, "comoda");
+            comoda = sender.options[sender.value].text;
+           // muebles.Add(sender.options[sender.value].text, "comoda");
 
 
         }
         else
          if (sender.name == "drop6")
         {
-            muebles.Add(sender.options[sender.value].text, "banco");
+            banco = sender.options[sender.value].text;
+            //muebles.Add(sender.options[sender.value].text, "banco");
 
 
         }
