@@ -10,6 +10,7 @@ public class script_editar_espacio : MonoBehaviour
 {
     Dictionary<string, string> muebles = new Dictionary<string, string>();
     String silla, mesa, gabinete, comoda, banco;
+    String piso_entrante;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +20,7 @@ public class script_editar_espacio : MonoBehaviour
         GameObject.Find("drop4").GetComponent<Dropdown>().value = getvalor_posicion(GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].gabinete); ;
         GameObject.Find("drop5").GetComponent<Dropdown>().value = getvalor_posicion(GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].comoda); ;
         GameObject.Find("drop6").GetComponent<Dropdown>().value = getvalor_posicion(GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].banco); ;
+        piso_entrante = GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].imagen;
     }
 
  
@@ -55,9 +57,16 @@ public class script_editar_espacio : MonoBehaviour
         if (EditorUtility.DisplayDialog("Edicion de espacio.", "\n¿Desea Guardar los cambios?", "Si", "No"))
         {
             //aqui agregamos al diccionario el espacio con su imagen
-            GameStatus.lista_piso_muebles.Remove(GameStatus.piso);
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].imagen = GameStatus.piso;
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].silla = silla;
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].mesa = mesa;
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].gabinete = gabinete;
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].comoda = comoda;
+            GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].banco = banco;
+            //
+            GameStatus.lista_piso_muebles.Remove(piso_entrante);
             GameStatus.insertar_lista_imagen_pos_muebles(GameStatus.piso, muebles);
-            //SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("lista_editar_espacio");
         }
         else
         {

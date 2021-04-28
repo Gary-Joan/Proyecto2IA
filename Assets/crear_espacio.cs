@@ -142,11 +142,11 @@ public class crear_espacio : MonoBehaviour
         GameStatus.insertar_lista_espacios(esp);
         GameStatus.insertar_lista_imagen_pos_muebles(esp.imagen, muebles);
 
-        if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea ver el escenario o regresar menu principal?", "Ver escenario", "Menu principal"))
+        if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea crea otro objeto o regresar al menu principal?", "Crear otro", "Menu principal"))
         {
             //aqui agregamos al diccionario el espacio con su imagen
             
-            SceneManager.LoadScene("espacio");
+            SceneManager.LoadScene("crear_espacio");
         }
         else
         {

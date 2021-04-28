@@ -72,8 +72,9 @@ public class script_lista_espacio_ver : MonoBehaviour
     void enviar_espacio(int i) {
 
         GameStatus.piso = GameStatus.lista_imagen_sillas[i].imagen;
-        GameStatus.muebles_posicion = GameStatus.lista_piso_muebles[GameStatus.piso];
         Debug.Log(GameStatus.piso);
+        GameStatus.muebles_posicion = GameStatus.lista_piso_muebles[GameStatus.piso];
+
         foreach (var entry in GameStatus.muebles_posicion)
         {
             Debug.Log(entry.Key + "= " + entry.Value);
