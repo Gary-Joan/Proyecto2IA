@@ -65,7 +65,7 @@ public class script_editar_espacio : MonoBehaviour
             GameStatus.lista_imagen_sillas[GameStatus.espacio_seleccionado].banco = banco;
             //
             GameStatus.lista_piso_muebles.Remove(piso_entrante);
-            GameStatus.insertar_lista_imagen_pos_muebles(GameStatus.piso, muebles);
+            GameStatus.Insertar_lista_imagen_pos_muebles(GameStatus.piso, muebles);
             SceneManager.LoadScene("lista_editar_espacio");
         }
         else
