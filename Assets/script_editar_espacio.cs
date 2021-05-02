@@ -47,6 +47,15 @@ public class script_editar_espacio : MonoBehaviour
 
     }
     public void guardar() {
+
+        if (GameStatus.contador_espacio == 7)
+        {
+            if (EditorUtility.DisplayDialog("ERROR", "No se puede editar ningun espacio, borre 1", "OK", "Menu principal"))
+            {              
+                return;
+            }
+            return;
+        }
         //insertamos los valores de los drop en la lista de muebles
         muebles.Add(silla, "silla");
         muebles.Add(mesa, "mesa");

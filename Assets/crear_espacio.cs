@@ -176,6 +176,14 @@ public class crear_espacio : MonoBehaviour
             }
         }
 
+        if (GameStatus.contador_espacio == 7)
+        {
+            if (EditorUtility.DisplayDialog("ERROR", "Ya existen 6 espacios,  no puede crear otro", "OK", "Menu principal"))
+            {               
+                return;
+            }
+        }
+
         GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
         GameStatus.contador_espacio++;
         GameStatus.insertar_lista_espacios(esp);
