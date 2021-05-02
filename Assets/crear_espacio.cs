@@ -10,8 +10,8 @@ public class crear_espacio : MonoBehaviour
     // Start is called before the first frame update
     public List<string> lista_pisos;
     Dictionary<string, string> muebles = new Dictionary<string, string>();
-   
- 
+    public static LinkedList<string> posValidacion3 = new LinkedList<string>();
+
     public int contador=0;
     public Dropdown drop;
 
@@ -52,8 +52,10 @@ public class crear_espacio : MonoBehaviour
     public espacio esp = new espacio();
     //cuadro de alertas
        void Start()
-    {     
+    {
+        
     }
+
     public void piso_valuechange(Dropdown sender) {
 
         switch (sender.value)
@@ -101,7 +103,6 @@ public class crear_espacio : MonoBehaviour
         }
         else if (sender.name == "drop3")
         {
-
             if (Ingresar_muebles_a_espacio(sender.options[sender.value].text, "mesa"))
             {
                 esp.mesa = sender.options[sender.value].text;
@@ -137,6 +138,9 @@ public class crear_espacio : MonoBehaviour
     }
     //metodo que ingresa los muebles y donde vamos aver que no se repitan los muebles en el espacio
     public bool Ingresar_muebles_a_espacio(string posicion, string mueble) {
+        if (!posValidacion3.Contains(posicion)) {
+            posValidacion3.AddFirst(posicion);
+        }
         if (!muebles.ContainsKey(posicion))
         {
             muebles.Add(posicion, mueble);
@@ -156,13 +160,22 @@ public class crear_espacio : MonoBehaviour
     {
         
     }
+
     public void regresar() {
         SceneManager.LoadScene("MainMenu");
     }
     //inicializar de espacios
     
     public void mandardatos() {
-        
+        if (posValidacion3.Count < 5)
+        {
+            if (EditorUtility.DisplayDialog("ERROR", "El espacio no puede tener posiciones VACIAS", "Intentar de nuevo", "Menu principal"))
+            {
+                posValidacion3 = new LinkedList<string>();
+                return;
+            }
+        }
+
         GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
         GameStatus.contador_espacio++;
         GameStatus.insertar_lista_espacios(esp);
