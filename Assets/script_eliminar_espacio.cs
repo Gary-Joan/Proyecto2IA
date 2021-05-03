@@ -81,7 +81,7 @@ public class script_eliminar_espacio : MonoBehaviour
             case 0:
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 1 -- " + DateTime.Now.ToString("hh:mm:ss"));                   
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 1 -- " + DateTime.Now.ToString("hh:mm:ss"));                   
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_1");
                     SceneManager.LoadScene("eliminar_espacio");
@@ -92,7 +92,7 @@ public class script_eliminar_espacio : MonoBehaviour
 
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 2 -- " + DateTime.Now.ToString("hh:mm:ss"));
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 2 -- " + DateTime.Now.ToString("hh:mm:ss"));
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_2");
                     SceneManager.LoadScene("eliminar_espacio");
@@ -103,7 +103,7 @@ public class script_eliminar_espacio : MonoBehaviour
 
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 3 -- " + DateTime.Now.ToString("hh:mm:ss"));
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 3 -- " + DateTime.Now.ToString("hh:mm:ss"));
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_3");
                     SceneManager.LoadScene("eliminar_espacio");
@@ -113,7 +113,7 @@ public class script_eliminar_espacio : MonoBehaviour
             case 3:
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 4 -- " + DateTime.Now.ToString("hh:mm:ss"));
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 4 -- " + DateTime.Now.ToString("hh:mm:ss"));
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_4");
                     SceneManager.LoadScene("eliminar_espacio");
@@ -124,7 +124,7 @@ public class script_eliminar_espacio : MonoBehaviour
 
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 5 -- " + DateTime.Now.ToString("hh:mm:ss"));
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 5 -- " + DateTime.Now.ToString("hh:mm:ss"));
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_5");
                     SceneManager.LoadScene("eliminar_espacio");
@@ -134,7 +134,7 @@ public class script_eliminar_espacio : MonoBehaviour
             case 5:
                 if (eliminado_mensaje())
                 {
-                    GameStatus.insertar_bitacora("Se elimino ESPACIO 6 -- " + DateTime.Now.ToString("hh:mm:ss"));
+                    GameStatus.insertar_bitacora("[ACCION]Se elimino ESPACIO 6 -- " + DateTime.Now.ToString("hh:mm:ss"));
                     GameStatus.EscribirBitacora();
                     GameStatus.lista_espacios_imagen.Remove("imagen_6");
                     SceneManager.LoadScene("eliminar_espacio");

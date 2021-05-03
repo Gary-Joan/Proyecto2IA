@@ -31,7 +31,7 @@ public class GameStatus : MonoBehaviour
         try
         {
             
-            StreamWriter sw = new StreamWriter("C:\\Users\\sharolin\\Desktop\\bitacora.txt");
+            StreamWriter sw = new StreamWriter("C:\\Users\\sharolin\\Desktop\\bitacora_201408486_200915609.txt");
 
             for (int i = 0; i < bitacora.Count; i++)
             {
@@ -69,6 +69,7 @@ public class GameStatus : MonoBehaviour
         else {
             if (EditorUtility.DisplayDialog("ERROR 0001", "\n　　NO SE PUEDE CREAR MAS DE 6 ESPACIOS!!!!","Ok"))
             {
+                GameStatus.insertar_bitacora("[ACCION] Ingreso a Crear Espacio -- " + DateTime.Now.ToString("hh:mm:ss"));
                 SceneManager.LoadScene("crear_espacio");
             }
             return false;
@@ -81,6 +82,7 @@ public class GameStatus : MonoBehaviour
         if (lista_piso_muebles.ContainsKey(piso)){
             if (EditorUtility.DisplayDialog("ERROR 0004", "\n　　NO PUEDE HABER 2 ESPACIO CON ESE MISMO PISO!!!!", "Ok"))
             {
+                GameStatus.insertar_bitacora("[ACCION] Ingreso a Crear Espacio -- " + DateTime.Now.ToString("hh:mm:ss"));
                 SceneManager.LoadScene("crear_espacio");
             }
             return true;

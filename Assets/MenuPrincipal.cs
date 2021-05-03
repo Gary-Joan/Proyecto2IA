@@ -12,7 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     void Update()
     {   }
     public void cargar_escena(string escena) {
-        GameStatus.insertar_bitacora("Se Regreso a Menu Principal -- " + DateTime.Now.ToString("hh:mm:ss"));
+        GameStatus.insertar_bitacora("[ERROR]Se Regreso a Menu Principal -- " + DateTime.Now.ToString("hh:mm:ss"));
         SceneManager.LoadScene(escena);
     }
 
