@@ -150,7 +150,7 @@ public class crear_espacio : MonoBehaviour
         else {
             if (EditorUtility.DisplayDialog("ERROR 0002", "\n¡¡¡¡Ya existe este mueble en otra posicion!!!!", "Ok"))
             {
-                GameStatus.insertar_bitacora("ERROR 0002 Ya existe este mueble en otra posicion!!!!" + " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.insertar_bitacora("[ERROR] 0002 Ya existe este mueble en otra posicion!!!!" + " -- " + DateTime.Now.ToString("hh:mm:ss"));
                 GameStatus.EscribirBitacora();
                 return false;
             }
