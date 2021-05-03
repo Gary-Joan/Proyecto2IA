@@ -51,7 +51,9 @@ public class script_editar_espacio : MonoBehaviour
         if (GameStatus.contador_espacio == 7)
         {
             if (EditorUtility.DisplayDialog("ERROR", "No se puede editar ningun espacio, borre 1", "OK", "Menu principal"))
-            {              
+            {
+                GameStatus.insertar_bitacora("ERROR No se puede editar ningun espacio, YA EXISTEN 6, borre 1!!!!" + " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.EscribirBitacora();
                 return;
             }
             return;
@@ -76,6 +78,9 @@ public class script_editar_espacio : MonoBehaviour
             GameStatus.lista_piso_muebles.Remove(piso_entrante);
             GameStatus.Insertar_lista_imagen_pos_muebles(GameStatus.piso, muebles);
             SceneManager.LoadScene("lista_editar_espacio");
+
+            GameStatus.insertar_bitacora("Se Edito " + GameStatus.piso.ToString() +" -- " + DateTime.Now.ToString("hh:mm:ss"));            
+            GameStatus.EscribirBitacora();
         }
         else
         {

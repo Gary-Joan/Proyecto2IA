@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -149,6 +150,8 @@ public class crear_espacio : MonoBehaviour
         else {
             if (EditorUtility.DisplayDialog("ERROR 0002", "\n¡¡¡¡Ya existe este mueble en otra posicion!!!!", "Ok"))
             {
+                GameStatus.insertar_bitacora("ERROR 0002 Ya existe este mueble en otra posicion!!!!" + " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.EscribirBitacora();
                 return false;
             }
             return false;
@@ -171,6 +174,8 @@ public class crear_espacio : MonoBehaviour
         {
             if (EditorUtility.DisplayDialog("ERROR", "El espacio no puede tener posiciones VACIAS", "Intentar de nuevo", "Menu principal"))
             {
+                GameStatus.insertar_bitacora("ERROR  El espacio no puede tener posiciones VACIAS" + " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.EscribirBitacora();
                 posValidacion3 = new LinkedList<string>();
                 return;
             }
@@ -179,7 +184,9 @@ public class crear_espacio : MonoBehaviour
         if (GameStatus.contador_espacio == 7)
         {
             if (EditorUtility.DisplayDialog("ERROR", "Ya existen 6 espacios,  no puede crear otro", "OK", "Menu principal"))
-            {               
+            {
+                GameStatus.insertar_bitacora("ERROR  Ya existen 6 espacios,  no puede crear otro" +  " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.EscribirBitacora();
                 return;
             }
         }
@@ -198,7 +205,8 @@ public class crear_espacio : MonoBehaviour
             if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea crea otro objeto o regresar al menu principal?", "Crear otro", "Menu principal"))
             {
                 //aqui agregamos al diccionario el espacio con su imagen
-
+                GameStatus.insertar_bitacora("Se Creo Espacio " + (GameStatus.contador_espacio - 1).ToString() + " -- " + DateTime.Now.ToString("hh:mm:ss"));
+                GameStatus.EscribirBitacora();
                 SceneManager.LoadScene("crear_espacio");
             }
             else

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -18,10 +20,35 @@ public class GameStatus : MonoBehaviour
 
     //lista para manejar el log de la bitacora 
     public static List<string> bitacora = new List<string>();
+
     public static void insertar_bitacora(string accion) {
         bitacora.Add(accion);
         
     }
+
+    public static void EscribirBitacora()
+    {
+        try
+        {
+            
+            StreamWriter sw = new StreamWriter("C:\\Users\\sharolin\\Desktop\\bitacora.txt");
+
+            for (int i = 0; i < bitacora.Count; i++)
+            {
+                sw.WriteAsync(bitacora[i] + "\n");
+            }            
+            sw.Close();
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine("Exception: ESCRIBIR ARCHIVO" + e.Message);
+        }
+        finally
+        {
+            Console.WriteLine("Executing finally block. ESCRIBIR ARCHIVO");
+        }
+    }
+
     public static void insertar_lista_espacios(crear_espacio.espacio espacio) {
         lista_imagen_sillas.Add(espacio);
     }

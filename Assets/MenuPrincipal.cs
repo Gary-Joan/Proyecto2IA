@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class MenuPrincipal : MonoBehaviour
     void Update()
     {   }
     public void cargar_escena(string escena) {
+        GameStatus.insertar_bitacora("Se Regreso a Menu Principal -- " + DateTime.Now.ToString("hh:mm:ss"));
         SceneManager.LoadScene(escena);
     }
 
