@@ -191,9 +191,7 @@ public class crear_espacio : MonoBehaviour
             }
         }
 
-        GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
-        GameStatus.contador_espacio++;
-        GameStatus.insertar_lista_espacios(esp);
+
 
         //No se podrá crear más de 6 espacios debido a la limitación de los pisos
         //metodo dentro del gamestatus para ver si hay mas de 6 espacios si lo hay-- tira error
@@ -201,6 +199,9 @@ public class crear_espacio : MonoBehaviour
         //aqui tambien ingresamos los espacios a la lista global de espacios
         if (GameStatus.Insertar_lista_imagen_pos_muebles(esp.imagen, muebles))
         {
+            GameStatus.insertar_lista("imagen_" + GameStatus.contador_espacio.ToString(), GameStatus.piso);
+            GameStatus.contador_espacio++;
+            GameStatus.insertar_lista_espacios(esp);
 
             if (EditorUtility.DisplayDialog("EXITO!!", "Escenario Creado!!\n¿Desea crea otro objeto o regresar al menu principal?", "Crear otro", "Menu principal"))
             {

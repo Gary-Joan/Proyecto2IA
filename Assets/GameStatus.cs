@@ -31,7 +31,7 @@ public class GameStatus : MonoBehaviour
         try
         {
             
-            StreamWriter sw = new StreamWriter("C:\\Users\\sharolin\\Desktop\\bitacora_201408486_200915609.txt");
+            StreamWriter sw = new StreamWriter("C:\\Users\\gjoan\\Desktop\\bitacora_201408486_200915609.txt");
 
             for (int i = 0; i < bitacora.Count; i++)
             {
